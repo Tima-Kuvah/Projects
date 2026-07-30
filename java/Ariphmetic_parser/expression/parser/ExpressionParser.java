@@ -77,23 +77,30 @@ public class ExpressionParser implements ListParser {
 
         private MyExpression parseUnariOperarions() {
             skipWhitespace();
+
+            if (check("ceiling") || check("floor") ||
+                    check("reverse") || check("digits")) {
                 // :NOTE: общий код, switch
                 if (take("ceiling")) {
                     return new Ceil(parseUnariOperarions());
 
                 }
+
                 if (take("floor")) {
                     return new Floor(parseUnariOperarions());
 
                 }
+
                 if (take("reverse")) {
                     return new Reverse(parseUnariOperarions());
 
                 }
+
                 if (take("digits")) {
                     return new Digits(parseUnariOperarions());
 
                 }
+            }
             return parseNum();
         }
 

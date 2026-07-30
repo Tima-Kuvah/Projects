@@ -26,7 +26,6 @@ public class Log2 extends UnaryOperation {
         int right = 30;
         int result = 0;
 
-
         while (left <= right) {
             int mid = left + (right - left) / 2;
             long power = fastPower(y, mid);

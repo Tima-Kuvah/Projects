@@ -83,7 +83,7 @@ public class ExpressionParser implements ListParser {
 
             }
 
-            return parseNum();
+            return parseNum(); // :NOTE: почему это parseNum, если там много разного
         }
 
         private MyExpression parseNum() throws ParsingException {
